@@ -14,16 +14,24 @@ const fs = require('fs')
 //     console.log(err.message)
 // })
 
+
+
 async function fn () {
     let a = await new Promise((resolve,reject)=>{
         fs.readFile('lorem.txt', 'utf-8', (err, data)=>{
-            resolve(data) 
+
             if(err) reject(err) 
+            else resolve(data) 
         })
     })
     console.log(a)
 }
 
 fn()
+
+// let str = 'hello every one i am    sid'
+
+// let arr = str.split(' ').join(' ')
+// console.log(arr)
 
 

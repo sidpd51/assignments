@@ -41,6 +41,54 @@
   
 //   promise.then(alert);
 
-let arr = ['a','b', 'c']
+// let arr = ['a','b', 'c']
 
-console.log(arr.findIndex('a'))
+// console.log(arr.findIndex('a'))
+
+// function wait(n) {
+//     return new Promise((resolve, reject)=>{
+//         setTimeout(()=>{
+//             resolve()
+//         }, n)
+//     })
+// }
+
+// let start = Date.now()
+// wait(2)
+// console.log(Date.now()-start)
+
+
+
+function wait1(t) {
+    return new Promise((resolve, reject)=>{
+        setTimeout(() => {
+            resolve()
+        }, t*1000);
+    })
+}
+
+function wait2(t) {
+    return new Promise((resolve, reject)=>{
+        setTimeout(() => {
+            resolve()
+        }, t*1000);
+    })
+}
+
+function wait3(t) {
+    return new Promise((resolve, reject)=>{
+        setTimeout(() => {
+            resolve()
+        }, t*1000);
+    })
+}
+
+function calculateTime(t1, t2, t3) {
+    return Promise.all([wait1(t1),
+        wait2(t2),
+        wait3(t3)
+    ])
+}
+calculateTime(1,2,3).then((values)=>{
+    console.log(values)
+})
